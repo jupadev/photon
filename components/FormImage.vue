@@ -18,7 +18,7 @@
           class="input"
         />
       </label>
-      <ul v-if="errors.length">
+      <ul v-if="errors.length" class="has-text-danger">
         <li v-for="error in errors" :key="error">{{ error }}</li>
       </ul>
     </div>
