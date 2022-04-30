@@ -2,7 +2,7 @@
   <section class="section">
     <FormImage />
     <p v-if="$fetchState.pending">Fetching ...</p>
-    <p v-else-if="$fetchState.error" class="has-text-danger">An error occurred :(</p>
+    <p v-else-if="$fetchState.error" class="has-text-danger">Ups: ocurred an error 😔</p>
     <FormResult :images="images" />
   </section>
 </template>
