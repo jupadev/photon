@@ -2,7 +2,9 @@
   <section class="section">
     <FormImage />
     <p v-if="$fetchState.pending">Fetching ...</p>
-    <p v-else-if="$fetchState.error" class="has-text-danger">Ups: ocurred an error 😔</p>
+    <p v-else-if="$fetchState.error" class="has-text-danger">
+      Ups: ocurred an error 😔
+    </p>
     <FormResult :images="images" />
   </section>
 </template>
@@ -24,9 +26,9 @@ export default {
     }
   },
   async fetch() {
-    this.images = await fetch('https://serverles-api.jupavar.workers.dev').then(
-      (res) => res.json()
-    )
+    this.images = await fetch(
+      'https://serverles-api.jupavar.workers.dev?query=animals'
+    ).then((res) => res.json())
   },
   created() {
     this.$nuxt.$on('newResult', (list) => {
